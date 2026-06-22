@@ -22,6 +22,11 @@ Trong đó:
 - `AGENTS.md`: rule chính cho Codex trong workspace.
 - `GEMINI.md`: file cấu hình gốc của Gemini/Anigravity, giữ lại để tham chiếu.
 
+Với **Codex**, `AGENTS.md` được nạp như instruction của workspace; `GEMINI.md`
+và `.agent/` là knowledge pack được truy cập thông qua các adapter trong `.codex/`.
+Với **Gemini/Anigravity**, `GEMINI.md` và `.agent/` là cấu hình gốc; `.codex/`
+không phải thành phần kích hoạt của Gemini.
+
 ### Chỉ dùng rule cơ bản cho Codex
 
 Nếu không cần skill/workflow Anigravity, chỉ cần copy:
@@ -39,6 +44,10 @@ Lưu ý: slash commands như `/debug`, `/plan`, `/api` sẽ cần thư mục `.a
 2. Đảm bảo Codex extension đang chạy trong đúng workspace.
 3. Reload VS Code hoặc reload Codex extension sau khi copy file.
 4. Chat với Codex như bình thường.
+
+Sau khi copy sang project khác, hãy giữ `AGENTS.md` ở thư mục gốc và kiểm tra
+các rule riêng của project để tránh xung đột. Adapter sẽ tự dò stack từ manifest
+và source của project, không giả định Node.js, MongoDB hay Vue.
 
 ## Nghi thức kích hoạt Mi
 
@@ -72,6 +81,9 @@ dùng Anigravity skill cho Node.js backend
 - Không cần copy toàn bộ `.agent/skills` vào `.codex/skills`.
 - `.codex/skills/anigravity-skill-loader` sẽ giúp Codex tìm skill phù hợp trong `.agent/skills`.
 - `.codex/skills/anigravity-workflow` sẽ giúp Codex đọc workflow tương ứng trong `.agent/workflows`.
+- Một slash command chỉ hoạt động khi có file cùng tên trong `.agent/workflows/`.
+  Bản hiện tại chưa có `release-version.md`, `update.md`, và `update-docs.md`, dù
+  ba lệnh này được liệt kê trong `GEMINI.md`.
 
 ## Kiểm tra nhanh
 

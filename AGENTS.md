@@ -22,13 +22,11 @@ When the user says "thuc day di Mi", "thức dậy đi Mi", or directly calls "M
 
 If `.agent/` is missing, explain that only Codex base rules are available and Anigravity skills/workflows need `.agent/`.
 
-# Stack
+# Stack Detection
 
-- Node.js
-- MongoDB
-- Vite + Vue 3
-- ESLint
-- Prettier
+- Detect the target project's stack from its source files and manifests before acting.
+- Prefer the project's existing package manager, framework, database, lint, and format tools.
+- Do not assume this workspace's example stack applies after this pack is copied elsewhere.
 
 # Core Rules
 
