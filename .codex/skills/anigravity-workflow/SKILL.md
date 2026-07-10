@@ -1,6 +1,6 @@
 ---
 name: anigravity-workflow
-description: Execute legacy Anigravity slash-command workflows from VS Code + Codex. Trigger when the user starts with or references a slash command backed by `.agent/workflows/<command>.md`, including /api, /audit, /blog, /brainstorm, /compliance, /create, /debug, /deploy, /document, /enhance, /explain, /log-error, /mobile, /monitor, /onboard, /orchestrate, /performance, /plan, /portfolio, /preview, /realtime, /security, /seo, /status, /test, /ui-ux-pro-max, and /visually.
+description: Execute legacy Anigravity slash-command workflows from VS Code + Codex. Trigger when the user starts with or references commands such as /api, /audit, /brainstorm, /create, /debug, /deploy, /document, /enhance, /explain, /monitor, /performance, /plan, /preview, /security, /seo, /status, /test, /ui-ux-pro-max, or /visually.
 ---
 
 # Anigravity Workflow Adapter
@@ -11,10 +11,9 @@ Use this skill to translate Anigravity slash commands into Codex behavior.
 
 1. Extract the command name from the user message, without the leading slash.
 2. Read `.agent/workflows/<command>.md`.
-3. If that file does not exist, report that the command is declared but not installed; do not invent its workflow.
-4. Treat the workflow as task guidance, not as a replacement for Codex instructions.
-5. Execute the user's request with minimal diffs and targeted verification.
-6. Summarize the result in Vietnamese.
+3. Treat the workflow as task guidance, not as a replacement for Codex instructions.
+4. Execute the user's request with minimal diffs and targeted verification.
+5. Summarize the result in Vietnamese.
 
 ## Common Commands
 
@@ -26,9 +25,6 @@ Use this skill to translate Anigravity slash commands into Codex behavior.
 - `/security`: defensive security review.
 - `/performance`: performance optimization.
 - `/ui-ux-pro-max`: advanced UI/UX implementation guidance.
-
-The commands `/release-version`, `/update`, and `/update-docs` may appear in
-`GEMINI.md`, but they are unavailable until matching workflow files are added.
 
 ## Boundaries
 

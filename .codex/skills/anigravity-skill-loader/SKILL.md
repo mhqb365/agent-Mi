@@ -19,7 +19,6 @@ Use this as an adapter for the existing Anigravity skill library.
 
 - Node or backend work: start with `nodejs-best-practices`, `backend-dev-guidelines`, or `nodejs-backend-patterns`.
 - Vue/Vite/frontend work: start with frontend, JavaScript, TypeScript, UI, testing, or design-system skills that match the task.
-- Current frontend design work: consider `frontend-trends-2026` when the request explicitly calls for current visual trends.
 - API work: start with `api-patterns`, `api-design-principles`, `api-documenter`, or `openapi-spec-generation`.
 - Security work: start with security, OWASP, penetration, or top-web-vulnerabilities skills, but keep activity authorized and defensive.
 - Testing work: start with `test-driven-development`, `test-fixing`, `javascript-testing-patterns`, or `playwright-skill`.
