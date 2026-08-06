@@ -1,9 +1,9 @@
-# Agent Pack for Ponytail and Mi
+# Agent Pack for Mi & Ponytail
 
-Repo này chứa 2 bộ hướng dẫn cho Codex:
+Repo này chứa 2 phong cách làm việc cho Codex và Antigravity
 
-- `Ponytail`: bộ skill/rule tối giản, ưu tiên diff nhỏ và tái sử dụng.
-- `Mi`: bộ cấu hình Anigravity/Gemini, gồm `AGENTS_CODEX.md`, `GEMINI.md` và các file liên quan đến `.agent/`.
+- `Mi`: mặc định, dùng cấu hình Anigravity/Gemini và áp dụng nguyên tắc Ponytail-style: tối giản, ít token, hiệu quả cao
+- `Ponytail`: profile phụ, dùng khi người dùng explicitly yêu cầu mode lazy senior dev
 
 ## Repo này có gì
 
@@ -11,33 +11,20 @@ Repo này chứa 2 bộ hướng dẫn cho Codex:
 AGENTS.md
 AGENTS_CODEX.md
 GEMINI.md
-skills/
+.agent/
+.codex/
 ```
 
 ## Cách dùng
 
-### Với Ponytail
-
-Khi làm việc theo profile `Ponytail`, Codex sẽ đọc `AGENTS.md` và áp dụng các rule trong file này.
-
-### Với Mi / Anigravity
-
-Khi người dùng gọi `Mi`, nhắc đến Anigravity, `.agent`, `.codex`, hoặc slash commands, Codex sẽ đọc `AGENTS_CODEX.md` trước và dùng `GEMINI.md` như knowledge pack tham chiếu.
-
-## Cấu trúc skill hiện có
-
-```text
-skills/
-  ponytail/
-  ponytail-audit/
-  ponytail-debt/
-  ponytail-gain/
-  ponytail-help/
-  ponytail-review/
-```
+- Copy toàn bộ thư mục này vào thư mục gốc của dự án
+- Không cần cấu hình thêm
+- Agent sẽ tự đọc `AGENTS.md`, `AGENTS_CODEX.md` và `GEMINI.md` để hoạt động
+- Với Mi / Antigravity, agent đọc `AGENTS_CODEX.md` và `GEMINI.md`
+- Với Ponytail, agent dùng `AGENTS.md` như rule chính khi được kích hoạt rõ ràng
 
 ## Lưu ý
 
-- `AGENTS.md` là file rule chính cho Codex trong workspace.
-- `GEMINI.md` là cấu hình tham chiếu cho Mi/Anigravity.
-- Nếu project đích cần dùng đầy đủ Anigravity skills/workflows, cần có thêm `.agent/` và `.codex/` theo đúng cấu trúc của project đó.
+- `AGENTS.md` là router chính và đặt Mi là profile mặc định
+- `GEMINI.md` là cấu hình tham chiếu cho Mi/Anigravity
+- Nếu project đích cần đầy đủ skill/workflow Anigravity, cần có thêm `.agent/` và `.codex/`
